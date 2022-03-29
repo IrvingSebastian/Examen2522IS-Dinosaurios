@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ViewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+//Rutas Iniciales
+Route::get('/', [ViewsController::class, 'raiz'])->name('raiz');
+Route::get('/index', [ViewsController::class, 'index'])->name('index');

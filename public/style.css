@@ -112,7 +112,7 @@ nav .brand-logo img {
 
 
 #home {
-  background-image: url("img/home-img1.jpg");
+  background-image: url("/img/fondo-1.webp");
   background-position: 100% 100%;
   background-size: 100% 100%;
   display: inline;
@@ -197,9 +197,9 @@ nav .brand-logo img {
 .profile-img {
   border: 5px solid #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  height: 130px;
+  height: 300px;
   margin: 0 auto;
-  width: 140px;
+  width: 200px;
 }
 
 
@@ -368,7 +368,7 @@ nav .brand-logo img {
   display: inline;
   float: left;
   margin-top: 55px;
-  padding-left: 20px;
+  padding-left: 200px;
   width: 100%;
 }
 
