@@ -17,4 +17,22 @@ class ViewsController extends Controller
     {
         return view('index');
     }
+
+    //Función del Blog
+    public function blog()
+    {
+        return view('blog');
+    }
+
+    //Función del Blog con Tema
+    public function blogTema($tema)
+    {
+        return view('blogTema', ['Tema' => $tema]);
+    }
+
+    //Función del Detalle de los Dinosaurios
+    public function dinos($id)
+    {
+        return view('dinos', ['ID' => $id]);
+    }
 }

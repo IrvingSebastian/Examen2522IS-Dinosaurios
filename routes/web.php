@@ -17,3 +17,11 @@ use App\Http\Controllers\ViewsController;
 //Rutas Iniciales
 Route::get('/', [ViewsController::class, 'raiz'])->name('raiz');
 Route::get('/index', [ViewsController::class, 'index'])->name('index');
+
+//Rutas del Blog
+Route::get('/blog', [ViewsController::class, 'blog'])->name('blog');
+Route::get('/blogTema/{tema}', [ViewsController::class, 'blogTema'])->name('blogTema');
+
+//Rutas de los Dinosaurios
+Route::get('/dinos/{id}', [ViewsController::class, 'dinos'])->name('dinos');
+

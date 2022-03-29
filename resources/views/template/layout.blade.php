@@ -4,9 +4,9 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
       <title>
-          @yield('Titulo')
+        @yield('Titulo')
       </title>
-       <!-- CSS  -->      
+      <!-- CSS  -->      
       <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <!-- Font Awesome -->
       <link href="/css/font-awesome.css" rel="stylesheet">
@@ -18,6 +18,7 @@
       <link id="switcher" href="/css/themes/brown-theme.css" type="text/css" rel="stylesheet" media="screen,projection"/>     
       <!-- Main css File -->
       <link href="/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
       <!-- Font -->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
@@ -41,26 +42,44 @@
                 <!-- TEXT BASED LOGO -->
                 <a href="{{route('index')}}" class="brand-logo">Dinosaurs Watchers</a>
 
-                <!-- Image Based Logo -->                
-                 <!-- <a href="index.html" class="brand-logo"><img src="img/logo.jpeg" alt="logo img"></a>  -->
-                <ul class="right hide-on-med-and-down custom-nav menu-scroll">
-                  <li><a href="#edcuation">Introducción</a></li>
-                  <li><a href="#portfolio">Dinosaurios</a></li>
-                  <li><a href="#blog">Blog</a></li>
-                  <li><a href="#testimonial">Opiniones</a></li>
-                  <li><a href="#about">Acerca De</a></li>
-                  <li><a href="#footer">Contacto</a></li>
-                </ul>
-                <!-- For Mobile View -->
-                <ul id="slide-out" class="side-nav menu-scroll">
-                  <li><a href="#edcuation">Introducción</a></li>
-                  <li><a href="#portfolio">Dinosaurios</a></li>
-                  <li><a href="#blog">Blog</a></li>
-                  <li><a href="#testimonial">Opiniones</a></li>
-                  <li><a href="#about">Acerca De</a></li>
-                  <li><a href="#footer">Contacto</a></li>
-                </ul>
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                @if (Route::is('index'))
+                  <!-- Menú Para La Vista Index -->                
+                  <ul class="right hide-on-med-and-down custom-nav menu-scroll">
+                    <li><a href="#edcuation">Introducción</a></li>
+                    <li><a href="#portfolio">Dinosaurios</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#testimonial">Opiniones</a></li>
+                    <li><a href="#about">Acerca De</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                  </ul>
+                  <!-- Para Móviles -->
+                  <ul id="slide-out" class="side-nav menu-scroll">
+                    <li><a href="#edcuation">Introducción</a></li>
+                    <li><a href="#portfolio">Dinosaurios</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#testimonial">Opiniones</a></li>
+                    <li><a href="#about">Acerca De</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                  </ul>
+                  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                
+                @else
+                  <!-- Menú Para La Vista Index -->                
+                  <ul class="right hide-on-med-and-down custom-nav">
+                    <li><a href="{{route('index')}}">Inicio</a></li>
+                    <li class="{{!Route::is('blog') ?: 'active'}}"><a href="{{route('blog')}}">Blog</a></li>
+                    <li class="{{!Route::is('dinos') ?: 'active'}}"><a href="{{route('dinos',1)}}">Dinosaurios</a></li>
+                  </ul>
+                  <!-- Para Móviles -->
+                  <ul id="slide-out" class="side-nav">
+                    <li><a href="#blog-details">Inicio</a></li>
+                    <li class="{{!Route::is('blog') ?: 'active'}}"><a href="{{route('blog')}}">Blog</a></li>
+                    <li class="{{!Route::is('dinos') ?: 'active'}}"><a href="{{route('dinos',1)}}">Dinosaurios</a></li>
+                  </ul>
+                  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+              
+                @endif                
+              
               </div>
             </div>
           </nav>
@@ -69,25 +88,6 @@
 
       <div class="main-wrapper">
         <main role="main">
-          <!-- START HOME SECTION -->
-          <section id="home">
-            <div class="overlay-section">
-              <div class="container">
-                <div class="row">
-                  <div class="col s12">
-                    <div class="home-inner">
-                      <h1 class="home-title">¡Hola! Bienvenido a <span>Dinosaurs Watchers</span></h1>
-                      <p>Solo una página de un estudiante apasionado por la programación y por los Dinosaurios :D</p>
-                      <a class="hire-me-btn btn waves-effect waves-light btn-large" href="#footer">Contacto<i class="mdi-content-send left"></i>                     
-                      </a>
-                      <!-- Call to About Button -->
-                      <button class="btn btn-floating waves-effect waves-light btn-large white call-to-about"><i class="material-icons">play_for_work</i></button>                  
-                    </div>
-                  </div>  
-                </div>
-              </div>
-            </div>
-          </section>
 
           @yield('Contenido')
           
@@ -125,6 +125,6 @@
       <script src="/js/jquery.counterup.min.js"></script>     
 
       <!-- Custom Js -->
-      <script src="/js/custom.js"></script>      
+      <script src="/js/custom.js"></script>   
     </body>
   </html>

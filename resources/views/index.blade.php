@@ -1,10 +1,29 @@
-@extends('template/layout')
+@extends('template.layout')
 
 @section('Titulo')
   Dinosaurs Watchers - Inicio
 @endsection
 
 @section('Contenido')
+<!-- START HOME SECTION -->
+<section id="home">
+  <div class="overlay-section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="home-inner">
+            <h1 class="home-title">¡Hola! Bienvenido a <span>Dinosaurs Watchers</span></h1>
+            <p>Solo una página de un estudiante apasionado por la programación y por los Dinosaurios :D</p>
+            <a class="hire-me-btn btn waves-effect waves-light btn-large" href="#footer">Contacto<i class="mdi-content-send left"></i>                     
+            </a>
+            <!-- Call to About Button -->
+            <button class="btn btn-floating waves-effect waves-light btn-large white call-to-about"><i class="material-icons">play_for_work</i></button>                  
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Start Resume -->
 <section id="resume">
   <!-- Start Education -->
@@ -209,8 +228,8 @@
        <div class="blog-inner">
          <h2 class="title">Blog</h2>
          <p style="font-size: 18px">Si deseas saber alguna cosa más acerca de estas fascinantes criaturas solo
-          da clic en alguna imagen de abajo y descrubriras lo que deseas, de igual forma puedes ver todos los posts
-          del blog.</p>
+          da clic en alguna imagen de abajo y descrubriras lo que deseas, de igual forma puedes ver todos las 
+          publicaciones del blog.</p>
         <!-- Start Blog area -->
         <div class="blog-area">
           <div class="row">
@@ -294,7 +313,7 @@
             </div>
           </div>
           <!-- All Post Button -->
-          <a class="waves-effect waves-light btn-large allpost-btn" href="blog-archive.html">Todos los Posts</a>
+          <a class="waves-effect waves-light btn-large allpost-btn" href="{{route('blog')}}">Todas las Publicaciones</a>
         </div>                    
        </div>
       </div>
