@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('Alimentación', 100);
             $table->string('Dimensiones', 100);
             $table->string('Ubicación Geográfica', 100);
-            $table->string('Descripción', 1000);
-            $table->string('Imagen', 100);
+            $table->string('Descripción', 2000);
+            $table->string('Imagen', 2000);
             $table->timestamps();
         });
     }

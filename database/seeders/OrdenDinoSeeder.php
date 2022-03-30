@@ -25,6 +25,7 @@ class OrdenDinoSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         )); 
+        $Ornis->save();
 
         $Sauris = new OrdenDinos(array(
             'Nombre' => 'Saurisquios',
@@ -34,6 +35,7 @@ class OrdenDinoSeeder extends Seeder
             Su característica principal son las caderas similares a las de los lagartos.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
-        )); 
+        ));
+        $Sauris->save();
     }
 }

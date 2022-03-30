@@ -69,48 +69,48 @@
             @yield('Encabezado')
             
             <section id="blog-details">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m8 l8">
+              <div class="container">
+                <div class="row">
+                  <div class="col s12 m8 l8">
                             
-                            @yield('Contenido')
+                    @yield('Contenido')
 
-                            <!-- Start Sidebar -->
-                                <div class="col s12 m4 l4">
-                                    <aside class="sidebar">
-                                    <!-- Start Single Sidebar -->
-                                    <div class="single-sidebar">
-                                        <h3>Algunos Dinosaurios</h3>
+                    <!-- Start Sidebar -->
+                        <div class="col s12 m4 l4">
+                          <aside class="sidebar">
+                            <!-- Start Single Sidebar -->
+                            <div class="single-sidebar">
+                                <h3>Algunos Dinosaurios</h3>
 
-                                        @yield('Dinos')
-                                        
-                                    </div>
-                                    <!-- Start Single Sidebar -->
-                                    <div class="single-sidebar">
-                                        <h3>Otros Proyectos</h3>
-                                        <!-- Single Category -->
-                                        <div class="tagcloud">
-                                        <a href="https://sebastian-rick-and-morty.herokuapp.com" target="_blank">Rick and Morty Proyecto</a>
-                                        <a href="http://codigos-postales-igsi.herokuapp.com/index" target="_blank">Códigos Postales</a>
-                                        <a href="http://blog-cliente-servidor.herokuapp.com/inicio" target="_blank">Blog Cliente Servidor</a>
-                                        <a href="http://animalesaurios.herokuapp.com/index" target="_blank">Dinoanimales</a>
-                                        </div>
-                                    </div>
-                                    <!-- Start Single Sidebar -->
-                                    <div class="single-sidebar">
-                                        <h3>Enlaces de Interés</h3>                      
-                                        <ul>
-                                        <li><a href="http://www.sgm.gob.mx/Web/MuseoVirtual/Fosiles/Paleontologia.html">Paleontología GOB.MX</a></li>
-                                        <li><a href="https://historia.nationalgeographic.com.es">National Geographic</a></li>
-                                        <li><a href="https://www.mundoprehistorico.com">Mundo Prehistórico</a></li>
-                                        <li><a href="https://www.jurassicworld.com">Jurassic World</a></li>
-                                        </ul>
-                                    </div>
-                                    </aside>
+                                @yield('Dinos')
+                                
+                            </div>
+                            <!-- Start Single Sidebar -->
+                            <div class="single-sidebar">
+                                <h3>Otros Proyectos</h3>
+                                <!-- Single Category -->
+                                <div class="tagcloud">
+                                <a href="https://sebastian-rick-and-morty.herokuapp.com" target="_blank">Rick and Morty Proyecto</a>
+                                <a href="http://codigos-postales-igsi.herokuapp.com/index" target="_blank">Códigos Postales</a>
+                                <a href="http://blog-cliente-servidor.herokuapp.com/inicio" target="_blank">Blog Cliente Servidor</a>
+                                <a href="http://animalesaurios.herokuapp.com/index" target="_blank">Dinoanimales</a>
                                 </div>
+                            </div>
+                            <!-- Start Single Sidebar -->
+                            <div class="single-sidebar">
+                                <h3>Enlaces de Interés</h3>                      
+                                <ul>
+                                <li><a href="http://www.sgm.gob.mx/Web/MuseoVirtual/Fosiles/Paleontologia.html">Paleontología GOB.MX</a></li>
+                                <li><a href="https://historia.nationalgeographic.com.es">National Geographic</a></li>
+                                <li><a href="https://www.mundoprehistorico.com">Mundo Prehistórico</a></li>
+                                <li><a href="https://www.jurassicworld.com">Jurassic World</a></li>
+                                </ul>
+                            </div>
+                          </aside>
                         </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </section>
           
             @if(Route::is('publicacion'))

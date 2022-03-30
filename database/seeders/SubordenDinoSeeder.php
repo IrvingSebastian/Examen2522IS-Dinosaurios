@@ -17,9 +17,11 @@ class SubordenDinoSeeder extends Seeder
     {
         date_default_timezone_set('America/Mexico_City');
 
-        $ID_Orden = [2, 2, 1, 1, 1];
+        $ID_Orden = [2, 2, 1, 1, 1, 2];
 
-        $Nombres=['Terópodos', 'Sauropodomorfos', 'Tireóforos', 'Marginocéfalos', 'Ornítopodos'];
+        $Nombres=[
+            'Terópodos', 'Sauropodomorfos', 'Tireóforos', 'Marginocéfalos', 
+            'Ornítopodos', 'Pterosaurios'];
 
         $Descripciones=[
             // Terópodos
@@ -27,9 +29,7 @@ class SubordenDinoSeeder extends Seeder
             huecos y sus extremidades con tres dedos funcionales.',
 
             // Sauropodomorfos
-            'LLos sauropodomorfos es un clado de dinosaurios herbívoros de cuello largo, 
-            pertenecientes al orden Saurischia que incluye a los saurópodos y sus antepasados. 
-            Los saurópodos generalmente alcanzaron grandes dimensiones, tenían cuellos y colas 
+            'Los sauropodomorfos generalmente alcanzaron grandes dimensiones, tenían cuellos y colas 
             largas, eran cuadrúpedos y fueron los animales más grandes que hayan caminado sobre 
             la Tierra.',
 
@@ -46,9 +46,16 @@ class SubordenDinoSeeder extends Seeder
             // Ornítopodos
             'Los ornitopodos ( "pie de ave", tambien llamados "pico de pato" ) son una familia de 
             dinosaurios hervivoros que vivieron en Norteamerica, Sudamerica, Asia, Africa, Europa, 
-            Oceania y la Antartida desde el periodo Jurasico.'];
+            Oceania y la Antartida desde el periodo Jurasico.',
+        
+            // Pterosaurios 
+            'Los pterosaurios, que significa reptiles alados, fueron un orden de voladores fósiles, 
+            parientes de los dinosaurios, que presentaban diversas formas y tamaños. reptiles 
+            diápsidos. Algunos eran pequeños como gorriones, y otros, tan grandes que cada ala 
+            medía tanto como un autobús.'
+        ];
 
-        for ($i=0; $i<5; $i++) { 
+        for ($i=0; $i<6; $i++) { 
             $Suborden = new SubordenDinos(array(
                 'ID_Orden' => $ID_Orden[$i],
                 'Nombre' => $Nombres[$i],
@@ -56,6 +63,7 @@ class SubordenDinoSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             )); 
+            $Suborden->save();
         }
         
     }

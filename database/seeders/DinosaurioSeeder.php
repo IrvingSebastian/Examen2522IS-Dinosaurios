@@ -22,7 +22,15 @@ class DinosaurioSeeder extends Seeder
         // 3. Tireóforos
         // 4. Marginocéfalos
         // 5. Ornítopodos
-        $ID_Suborden = [1, 2, 1, 5, ];
+        // 6. Pterodácteres
+        $ID_Suborden = [
+            1, 2, 1, 5, 4,
+            1, 2, 1, 2, 1,
+            4, 2, 1, 5, 1,
+            5, 3, 6, 4, 6,
+            1, 3, 4, 1, 4,
+            1, 1
+        ];
 
         $Nombres=['ABELISAURUS', 'ALAMOSAURUS', 'ALLOSAURUS', 'ANATOTIAN', 'ANCHICERATOPS',
                 'ARCHAEOPTERIX','BAROSAURUS', 'BARYONIX', 'BRACHIOSAURUS', 'CARNOTAURUS', 
@@ -181,7 +189,7 @@ class DinosaurioSeeder extends Seeder
     ];
 
         for ($i=0; $i<27; $i++) { 
-            $Suborden = new Dinosaurio(array(
+            $Dinosaurio = new Dinosaurio(array(
                 'ID_Suborden' => $ID_Suborden[$i],
                 'Nombre' => $Nombres[$i],
                 'Alimentación' => $Alimentaciones[$i],
@@ -192,6 +200,7 @@ class DinosaurioSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             )); 
+            $Dinosaurio->save();
         }
     }
 }

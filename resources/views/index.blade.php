@@ -54,7 +54,11 @@
           al límite superior del Mesozoico, este está fijado en la extinción masiva del Cretácico-Terciario. 
           Los expertos especulan que tuvo lugar por el impacto de un asteroide en la tierra, que 
           fue el causante del cráter de Chicxulub en Yucatán. Esta vez desapareció el 50% de todos 
-          los géneros de aquel entonces. Este porcentaje incluye a todos los dinosaurios no avianos.
+          los géneros de aquel entonces. Este porcentaje incluye a todos los dinosaurios no avianos.<br><br>
+          En este blog puedes acceder a información acerca de dinosaurios, ya sea un dinosaurio especifico o algún tipo
+          de publicación específica, puedes consultar este blog desde cualquier dispositivo, ya sea desde una computadora,
+          un teléfono celular o una tablet. Además encontratrás información, imágenes, videos y mucho más.
+          Todo esto fue realizado con los conocimientos hasta ahora adquiridos, espero que los disfrutes :)
         </p>
           <div id="owl-carousel1" class="experience-slider row">
             <!-- Start Single Experience -->
@@ -142,77 +146,36 @@
   <div class="portfolio-top">
     <div class="container">
       <div class="portfolio-top-inner">
-         <h2 class="title">Dinosaurios</h2>
-         <div class="controls">  
+        <h2 class="title">Dinosaurios</h2> 
+        <div class="controls">
           <button class="filter waves-effect waves-light btn" data-filter="all">Todos</button>
-          <button class="filter waves-effect waves-light btn" data-filter=".html">Terópodos</button>
-          <button class="filter waves-effect waves-light btn" data-filter=".design">Sauropodomorfos</button>
-          <button class="filter waves-effect waves-light btn" data-filter=".fashion">Tiréforos</button>
-          <button class="filter waves-effect waves-light btn" data-filter=".photoshop">Marginocéfalos</button>
-          <button class="filter waves-effect waves-light btn" data-filter=".wordpress">Ornítopodos</button>
-      </div>
+        </div>
+        <div class="controls">  
+          <button class="filter waves-effect waves-light btn" data-filter=".1">Terópodos</button>
+          <button class="filter waves-effect waves-light btn" data-filter=".2">Sauropodomorfos</button>
+          <button class="filter waves-effect waves-light btn" data-filter=".3">Tiréforos</button>
+          <button class="filter waves-effect waves-light btn" data-filter=".4">Marginocéfalos</button>
+          <button class="filter waves-effect waves-light btn" data-filter=".5">Ornítopodos</button>
+          <button class="filter waves-effect waves-light btn" data-filter=".6">Pterosaurios</button>
+        </div>
     </div>
   </div>
   </div>
   <div class="portfolio-bottom">
     <div class="container">
       <div class="portfolio-bottom-inner">
-        <div id="portfolio-list">                    
-          <div class="mix html" data-value="2">
-            <a href="#">
-              <img src="img/portfolio/html/html-2.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
-          <div class="mix fashion" data-value="4">
-            <a href="#">
-              <img src="img/portfolio/fashion/fashion-1.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>           
-            </a>
-          </div>
-          <div class="mix design" data-value="1">
-            <a href="#">
-              <img src="img/portfolio/design/design-1.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
-          <div class="mix html" data-value="5">
-            <a href="#">
-              <img src="img/portfolio/html/html-1.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
-          <div class="mix fashion" data-value="3">
-            <a href="#">
-              <img src="img/portfolio/fashion/fashion-2.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
-          <div class="mix design" data-value="9">
-            <a href="#">
-              <img src="img/portfolio/design/design-2.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
-          <div class="mix html" data-value="12">
-            <a href="#">
-              <img src="img/portfolio/html/html-3.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
-          <div class="mix fashion" data-value="7">
-            <a href="#">
-              <img src="img/portfolio/fashion/fashion-3.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
-          <div class="mix design" data-value="6">
-            <a href="#">
-              <img src="img/portfolio/design/design-3.jpg" alt="img">
-              <i class="material-icons view-icon">pageview</i>
-            </a>
-          </div>
+        <div id="portfolio-list">    
 
+          <!-- Aquí se cargan los Dinosaurios -->
+          @foreach ($Dinos as $Dino)
+            <div class="mix {{$Dino['ID_Suborden']}}" data-value="2">
+              <a href="#">
+                <img src="{{$Dino['Imagen']}}" alt="img">
+                <i class="material-icons view-icon">pageview</i>
+              </a>
+            </div>
+          @endforeach             
+          
         </div>
       </div>
     </div>
@@ -233,84 +196,36 @@
         <!-- Start Blog area -->
         <div class="blog-area">
           <div class="row">
-            <!-- Start single blog post -->
-            <div class="col s12 m4 l4">
-              <div class="blog-post">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="img/blog1.jpg">     
-                  </div>
-                  <div class="card-content blog-post-content">
-                    <h2><a href="blog-single.html">Awesome Post Title</a></h2>
-                    <div class="meta-media">
-                      <div class="single-meta">
-                        Post By <a href="#">Admin</a>
-                      </div>
-                      <div class="single-meta">
-                        Category : <a href="#">Web/Design</a>
-                      </div>
+
+            <!-- Aquí se cargan las Publicaciones -->
+            @foreach ($Publis as $Publi)
+              <div class="col s12 m4 l4">
+                <div class="blog-post">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="{{$Publi['Imagen']}}">     
                     </div>
-                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-                  </div>
-                  <div class="card-action">
-                    <a class="post-comment" href="#"><i class="material-icons">comment</i><span>15</span></a>
-                    <a class="readmore-btn" href="blog-single.html">Read More</a>
+                    <div class="card-content blog-post-content">
+                      <h2><a href="{{route('publicacion', $Publi['ID'])}}">{{$Publi['Titulo']}}</a></h2>
+                      <div class="meta-media">
+                        <div class="single-meta">
+                          Publicado Por {{$Publi['Autor']}}</a>
+                        </div>
+                        <div class="single-meta">
+                          Fecha de Publicación: {{$Publi['created_at']}}</a>
+                        </div>
+                      </div>
+                      <p>{{$Publi['Resumen']}}</p>
+                    </div>
+                    <div class="card-action">
+                      <a class="post-comment"><i class="material-icons">comment</i><span>{{$NumeroC}}</span></a>
+                      <a class="readmore-btn" href="{{route('publicacion', $Publi['ID'])}}">Leer Más...</a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Start single blog post -->
-            <div class="col s12 m4 l4">
-              <div class="blog-post">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="img/blog2.jpg">     
-                  </div>
-                  <div class="card-content blog-post-content">
-                    <h2><a href="blog-single.html">Awesome Post Title</a></h2>
-                    <div class="meta-media">
-                      <div class="single-meta">
-                        Post By <a href="#">Admin</a>
-                      </div>
-                      <div class="single-meta">
-                        Category : <a href="#">Web/Design</a>
-                      </div>
-                    </div>
-                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-                  </div>
-                  <div class="card-action">
-                    <a class="post-comment" href="#"><i class="material-icons">comment</i><span>10</span></a>
-                    <a class="readmore-btn" href="blog-single.html">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Start single blog post -->
-            <div class="col s12 m4 l4">
-              <div class="blog-post">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="img/blog3.jpg">     
-                  </div>
-                  <div class="card-content blog-post-content">
-                    <h2><a href="blog-single.html">Awesome Post Title</a></h2>
-                    <div class="meta-media">
-                      <div class="single-meta">
-                        Post By <a href="#">Admin</a>
-                      </div>
-                      <div class="single-meta">
-                        Category : <a href="#">Web/Design</a>
-                      </div>
-                    </div>
-                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-                  </div>
-                  <div class="card-action">
-                    <a class="post-comment" href="#"><i class="material-icons">comment</i><span>15</span></a>
-                    <a class="readmore-btn" href="blog-single.html">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
+          
           </div>
           <!-- All Post Button -->
           <a class="waves-effect waves-light btn-large allpost-btn" href="{{route('blog')}}">Todas las Publicaciones</a>
@@ -330,6 +245,8 @@
         <!-- Start Testimonial Slider -->
         <div class="testimonial-slider-area">
           <div id="owl-carousel2" class="testimonial-slider row">
+
+            <!-- Aquí se cargan las Opiniones -->
             <div class="col s12">
               <div class="single-testimonial">
                 <div class="testimonial-img">
@@ -345,18 +262,6 @@
             <div class="col s12">
               <div class="single-testimonial">
                 <div class="testimonial-img">
-                  <img src="img/profile-img1.jpg" alt="img">
-                </div>
-                <div class="testimonial-content">
-                  <h3>Mike Jones</h3>
-                  <span>CEO, Google Inc.</span>
-                  <p>"The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"</p>
-                </div>
-              </div>
-            </div> 
-            <div class="col s12">
-              <div class="single-testimonial">
-                <div class="testimonial-img">
                   <img src="img/profile-img.jpg" alt="img">
                 </div>
                 <div class="testimonial-content">
@@ -366,18 +271,7 @@
                 </div>
               </div>
             </div>
-            <div class="col s12">
-              <div class="single-testimonial">
-                <div class="testimonial-img">
-                  <img src="img/profile-img1.jpg" alt="img">
-                </div>
-                <div class="testimonial-content">
-                  <h3>Mike Jones</h3>
-                  <span>CEO, Google Inc.</span>
-                  <p>"The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"</p>
-                </div>
-              </div>
-            </div>                                       
+                                                
           </div>
           <div class="customNavigation">
             <a class="btn prev2 btn-floating waves-effect waves-light btn-large white"><i class="mdi-navigation-chevron-left brand-text"></i></a>
@@ -410,7 +304,7 @@
                   <h3>Información Personal</h3>
                   <ul>
                     <li><span>Nombre : </span>Irving Gregorio</li>
-                    <li><span>Edad : </span>19 Año</li>
+                    <li><span>Edad : </span>19 Años</li>
                     <li><span>Celular : </span>5523844575</li>
                     <li><span>Domicilio : </span>Técamac, Estado de México</li>
                   </ul>

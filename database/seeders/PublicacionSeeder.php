@@ -43,7 +43,7 @@ class PublicacionSeeder extends Seeder
          mientras que otros utilizaban la velocidad para capturar a sus presas. Unos se protegían de los 
          depredadores mediante estructuras corporales blindadas, algunos tenían cuernos, picos, crestas o 
          terminaciones óseas. También existieron dinosaurios con la piel gruesa y llena de baches, mientras 
-         que otros tenían incluso plumas primitivas.</p><br><br>
+         que otros tenían incluso plumas primitivas.</p><br>
         <blockquote><p>Admitimos que la variabilidad de un organismo hasta cierto punto es una condición constante 
         y cierta de la vida, de lo contrario no habría individuos distinguibles de una especie.</p>
         <cite>Sir Richard Owen</cite>  
@@ -309,6 +309,7 @@ class PublicacionSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             )); 
+            $Publi->save();
         }  
     }
 }

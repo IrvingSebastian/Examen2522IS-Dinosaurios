@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(PublicacionSeeder::class);
-        $this->call(DinosaurioSeeder::class);
         $this->call(OrdenDinoSeeder::class);
         $this->call(SubordenDinoSeeder::class);
+        $this->call(DinosaurioSeeder::class);
     }
 }

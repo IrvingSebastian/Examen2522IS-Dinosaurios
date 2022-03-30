@@ -1,7 +1,7 @@
 @extends('template.layoutBD')
 
 @section('Titulo')
-  Dinosaurs Watchers - {{$Tema}}
+  Dinosaurs Watchers - {{$Publi['Titulo']}}
 @endsection
   
 @section('Encabezado')
@@ -9,19 +9,19 @@
      <section id="banner">
       <div class="parallax-container">
         <div class="parallax">
-          <img src="/img/blog-header-bg.jpg">
+          <img src="{{$Publi['Imagen']}}">
         </div>
         <div class="overlay-header">       
         </div>
         <div class="overlay-content">
           <div class="container">
-            <h1 class="header-title">Awesome Image Post Title</h1>
+            <h1 class="header-title">{{$Publi['Titulo']}}</h1>
             <div class="meta-media">
               <div class="single-meta">
-                Post By </a>
+                Post By {{$Publi['Autor']}}</a>
               </div>
               <div class="single-meta">
-                <a href="#comments" class="post-comment"><i class="material-icons">comment</i><span>15</span></a>
+                <a href="#comments" class="post-comment"><i class="material-icons">comment</i><span>{{$Comentarios->count()}}</span></a>
               </div>
             </div>
           </div>
@@ -32,18 +32,37 @@
 
 @section('Contenido')
     <div class="blog-content">
+      <br>
       <div class="blog-image">
-        <img src="/img/blog1.jpg"> 
+        <img src="{{$Publi['Imagen']}}"> 
       </div>
-      
+      <br><br>
+
+      <!--- Mostrar la Publicación -->
+      {!! $Publi['Contenido'] !!}
+
     </div>
     <!-- Start Blog Navigation -->
     <div class="blog-navigation">
       <div class="blog-navigation-left">
-        <a class="prev-post" href="#">Publicación Anterior</a>
+
+        <!-- Condicional para los Botones de Navegación -->
+        @if($ID==1)
+          <a class="prev-post" onclick="">Publicación Anterior</a>
+        @else
+          <a class="prev-post" href="{{route('publicacion', $ID-1)}}">Publicación Anterior</a>
+        @endif
+
       </div>
       <div class="blog-navigation-right">
-        <a class="next-post" href="#">Publicación Siguiente</a>
+
+        <!-- Condicional para los Botones de Navegación -->
+        @if($ID==8)
+          <a class="next-post" onclick="">Publicación Siguiente</a>
+        @else
+          <a class="next-post" href="{{route('publicacion', $ID+1)}}">Publicación Siguiente</a>
+        @endif
+
       </div>
     </div>
     <!-- Strat Related Post -->
@@ -54,52 +73,34 @@
         </div>
         <div class="related-post-content">
           <div class="row">
-            <div class="col s12 m6 l6">
-              <div class="card">
-                <div class="card-image">
-                  <img src="/img/blog1.jpg">     
-                </div>
-                <div class="card-content blog-post-content">
-                  <h2><a href="#">Awesome Post Title</a></h2>
-                  <div class="meta-media">
-                    <div class="single-meta">
-                      Post By <a href="#">Admin</a>
-                    </div>
-                    <div class="single-meta">
-                      Category : <a href="#">Web/Design</a>
-                    </div>
+            
+            <!-- Aquí se cargan las Publicaciones -->
+            @foreach ($PublisAlternas as $PubliAlterna)
+              <div class="col s12 m6 l6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="{{$PubliAlterna['Imagen']}}">     
                   </div>
-                  <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#" class="post-comment"><i class="material-icons">comment</i><span>15</span></a>
-                  <a href="#" class="readmore-btn">Read More</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m6 l6">
-              <div class="card">
-                <div class="card-image">
-                  <img src="/img/blog1.jpg">     
-                </div>
-                <div class="card-content blog-post-content">
-                  <h2><a href="#">Awesome Post Title</a></h2>
-                  <div class="meta-media">
-                    <div class="single-meta">
-                      Post By <a href="#">Admin</a>
+                  <div class="card-content blog-post-content">
+                    <h2><a href="{{route('publicacion', $PubliAlterna['ID'])}}">{{$PubliAlterna['Titulo']}}</a></h2>
+                    <div class="meta-media">
+                      <div class="single-meta">
+                        Publicado Por {{$PubliAlterna['Autor']}}</a>
+                      </div>
+                      <div class="single-meta">
+                        Fecha de Publicación: {{$PubliAlterna['created_at']}}</a>
+                      </div>
                     </div>
-                    <div class="single-meta">
-                      Category : <a href="#">Web/Design</a>
-                    </div>
+                    <p>{{$Publi['Resumen']}}</p>
                   </div>
-                  <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
+                  <div class="card-action">
+                    <a class="post-comment"><i class="material-icons">comment</i><span>{{$NumeroC}}</span></a>
+                    <a class="readmore-btn" href="{{route('publicacion', $PubliAlterna['ID'])}}">Leer Más...</a>
+                  </div>
                 </div>
-                <div class="card-action">
-                  <a href="#" class="post-comment"><i class="material-icons">comment</i><span>15</span></a>
-                  <a href="#" class="readmore-btn">Read More</a>
-                </div>
-              </div>
-            </div>
+              </div> 
+            @endforeach
+          
           </div>
         </div>
       </div>
@@ -108,78 +109,30 @@
     <div class="row">
       <div class="col s12">
         <div class="comments-area" id="comments">
-          <h3 class="comments-title">5 Comments</h3>
+          @if($Comentarios->count() == 0)
+            <h3 class="comments-title">Aún No Hay Comentarios</h3>
+          @else
+            <h3 class="comments-title">{{$Comentarios->count()}} Comentarios</h3>
+          @endif
           <div class="comments">
             <ul class="commentlist">
-              <li>
-                <div class="media">
-                  <div class="media-left">    
-                    <img class="media-object news-img" src="/img/profile-img1.jpg" alt="img">      
-                  </div>
-                  <div class="media-body">
-                    <h4 class="author-name">Dr. Jack Johnson</h4>
-                    <span class="comments-date"> May 16, 2015 / 10:29 am</span>
-                    <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                    <a href="#" class="reply-btn">Reply</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="media">
-                  <div class="media-left">    
-                    <img class="media-object news-img" src="/img/profile-img1.jpg" alt="img">      
-                  </div>
-                  <div class="media-body">
-                    <h4 class="author-name">Dr. Jack Johnson</h4>
-                    <span class="comments-date"> May 16, 2015 / 10:29 am</span>
-                    <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                    <a href="#" class="reply-btn">Reply</a>
-                  </div>
-                </div>
-              </li>
-              <ul class="children">
-                <li class="author-comments">
+              <!-- Aquí se cargan los Comentarios -->	
+
+              @foreach ($Comentarios as $Comentario)
+                <li>
                   <div class="media">
                     <div class="media-left">    
-                        <img class="media-object news-img" src="/img/profile-img1.jpg" alt="img">  
+                      <img class="media-object news-img" src="/img/profile-img1.jpg" alt="img">      
                     </div>
                     <div class="media-body">
                       <h4 class="author-name">Dr. Jack Johnson</h4>
-                      <span class="comments-date"> May 16, 2015 / 10:29 am</span>                                  
+                      <span class="comments-date"> May 16, 2015 / 10:29 am</span>
                       <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
                       <a href="#" class="reply-btn">Reply</a>
                     </div>
                   </div>
                 </li>
-                <ul class="children">
-                  <li>
-                    <div class="media">
-                      <div class="media-left">    
-                        <img class="media-object" src="/img/profile-img1.jpg" alt="img">      
-                      </div>
-                      <div class="media-body">
-                        <h4 class="author-name">Dr. Jack Johnson</h4>
-                        <span class="comments-date"> May 16, 2015 / 10:29 am</span>
-                        <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                        <a href="#" class="reply-btn">Reply</a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </ul>
-              <li>
-                <div class="media">
-                  <div class="media-left">    
-                    <img class="media-object" src="/img/profile-img1.jpg" alt="img">      
-                  </div>
-                  <div class="media-body">
-                    <h4 class="author-name">Dr. Jack Johnson</h4>
-                    <span class="comments-date"> May 16, 2015 / 10:29 am</span>
-                    <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                    <a href="#" class="reply-btn">Reply</a>
-                  </div>
-                </div>
-              </li>
+              @endforeach
             </ul>
           </div>
         </div>
@@ -189,14 +142,17 @@
 @endsection
 
 @section('Dinos')
- <!-- Single Recent News -->
- <div class="recent-news">
-  <div class="recent-img">
-      <a href="blog-single.html"><img src="/img/blog1.jpg" alt="img"></a>
-  </div>
-  <div class="recent-body">
-      <h4><a href="blog-single.html">Recent News Title</a></h4>
-      <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-  </div>
-  </div>   
+  <!-- Aquí se cargan 3 Dinosaurios -->
+  @foreach ($Dinos as $Dino)
+  <div class="recent-news">
+    <div class="recent-img">
+        <a href="{{route('dinos', $Dino['ID'])}}"><img src="{{$Dino['Imagen']}}" alt="img"></a>
+    </div>
+    <div class="recent-body">
+        <h4><a href="{{route('dinos', $Dino['ID'])}}">{{$Dino['Nombre']}}</a></h4>
+        <p>{{$Dino['Alimentación']}}</p>
+    </div>
+  </div>  
+  @endforeach  
+
 @endsection

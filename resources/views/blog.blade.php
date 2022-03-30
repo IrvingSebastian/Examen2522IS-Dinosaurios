@@ -23,115 +23,51 @@
 
 @section('Contenido')
 <div class="blog-content blog-archive"> 
-  <!-- Start Single Blog-->
-   <div class="blog-post">
+  
+  <!-- Aquí se cargan Todas las Publicaciones -->
+  @foreach($Publis as $Publi)
+    <div class="blog-post">
       <div class="card">
         <div class="card-image">
-          <img src="/img/blog1.jpg">     
+          <img src="{{$Publi['Imagen']}}">     
         </div>
         <div class="card-content blog-post-content">
-          <h2><a href="blog-single.html">Awesome Post Title</a></h2>
+          <h2><a href="blog-single.html">{{$Publi['Titulo']}}</a></h2>
           <div class="meta-media">
             <div class="single-meta">
-              Post By <a href="#">Admin</a>
+              Publicado Por {{$Publi['Autor']}}</a>
             </div>
             <div class="single-meta">
-              Category : <a href="#">Web/Design</a>
+              Fecha de Publicación: <a href="#">{{$Publi['created_at']}}</a>
             </div>
           </div>
-          <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
+          <p>{{$Publi['Resumen']}}</p>
         </div>
         <div class="card-action">
-          <a href="#" class="post-comment"><i class="material-icons">comment</i><span>15</span></a>
-          <a href="blog-single.html" class="readmore-btn">Read More</a>
+          <a class="post-comment"><i class="material-icons">comment</i><span>{{$NumeroC}}</span></a>
+          <a href="{{route('publicacion', $Publi['ID'])}}" class="readmore-btn">Leer Más</a>
         </div>
       </div>
-    </div> 
-    <!-- Start Single Blog-->
-   <div class="blog-post">
-      <div class="card">
-        <div class="card-image">
-          <img src="/img/blog1.jpg">     
-        </div>
-        <div class="card-content blog-post-content">
-          <h2><a href="blog-single.html">Awesome Post Title</a></h2>
-          <div class="meta-media">
-            <div class="single-meta">
-              Post By <a href="#">Admin</a>
-            </div>
-            <div class="single-meta">
-              Category : <a href="#">Web/Design</a>
-            </div>
-          </div>
-          <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-        </div>
-        <div class="card-action">
-          <a href="#" class="post-comment"><i class="material-icons">comment</i><span>15</span></a>
-          <a href="blog-single.html" class="readmore-btn">Read More</a>
-        </div>
-      </div>
-    </div>
-     <!-- Start Single Blog-->
-   <div class="blog-post">
-      <div class="card">
-        <div class="card-image">
-          <img src="/img/blog1.jpg">     
-        </div>
-        <div class="card-content blog-post-content">
-          <h2><a href="blog-single.html">Awesome Post Title</a></h2>
-          <div class="meta-media">
-            <div class="single-meta">
-              Post By <a href="#">Admin</a>
-            </div>
-            <div class="single-meta">
-              Category : <a href="#">Web/Design</a>
-            </div>
-          </div>
-          <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-        </div>
-        <div class="card-action">
-          <a href="#" class="post-comment"><i class="material-icons">comment</i><span>15</span></a>
-          <a href="blog-single.html" class="readmore-btn">Read More</a>
-        </div>
-      </div>
-    </div>
-     <!-- Start Single Blog-->
-   <div class="blog-post">
-      <div class="card">
-        <div class="card-image">
-          <img src="/img/blog1.jpg">     
-        </div>
-        <div class="card-content blog-post-content">
-          <h2><a href="blog-single.html">Awesome Post Title</a></h2>
-          <div class="meta-media">
-            <div class="single-meta">
-              Post By <a href="#">Admin</a>
-            </div>
-            <div class="single-meta">
-              Category : <a href="#">Web/Design</a>
-            </div>
-          </div>
-          <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-        </div>
-        <div class="card-action">
-          <a href="#" class="post-comment"><i class="material-icons">comment</i><span>15</span></a>
-          <a href="blog-single.html" class="readmore-btn">Read More</a>
-        </div>
-      </div>
-    </div>    
-  </div>                  
+    </div>  
+  @endforeach
+  
+  </div>
 </div>
 @endsection
 
 @section('Dinos')
- <!-- Single Recent News -->
- <div class="recent-news">
-  <div class="recent-img">
-      <a href="blog-single.html"><img src="/img/blog1.jpg" alt="img"></a>
-  </div>
-  <div class="recent-body">
-      <h4><a href="blog-single.html">Recent News Title</a></h4>
-      <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-  </div>
-  </div>   
+ 
+  <!-- Aquí se cargan 3 Dinosaurios -->
+  @foreach ($Dinos as $Dino)
+  <div class="recent-news">
+    <div class="recent-img">
+        <a href="{{route('dinos', $Dino['ID'])}}"><img src="{{$Dino['Imagen']}}" alt="img"></a>
+    </div>
+    <div class="recent-body">
+        <h4><a href="{{route('dinos', $Dino['ID'])}}">{{$Dino['Nombre']}}</a></h4>
+        <p>{{$Dino['Alimentación']}}</p>
+    </div>
+  </div>  
+  @endforeach
+  
 @endsection

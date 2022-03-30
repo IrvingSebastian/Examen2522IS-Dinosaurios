@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class OrdenDinos extends Model
 {
     use HasFactory;
+    protected $table = 'orden_dinos';
 }

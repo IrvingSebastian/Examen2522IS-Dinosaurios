@@ -20,7 +20,7 @@ Route::get('/index', [ViewsController::class, 'index'])->name('index');
 
 //Rutas del Blog
 Route::get('/blog', [ViewsController::class, 'blog'])->name('blog');
-Route::get('/publicacion/{tema}', [ViewsController::class, 'publicacion'])->name('publicacion');
+Route::get('/publicacion/{id}', [ViewsController::class, 'publicacion'])->name('publicacion');
 
 //Rutas de los Dinosaurios
 Route::get('/dinos/{id}', [ViewsController::class, 'dinos'])->name('dinos');
