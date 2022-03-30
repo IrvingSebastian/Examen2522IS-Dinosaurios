@@ -13,8 +13,6 @@ return new class extends Migration
      */
     public function up()
     {
-        date_default_timezone_set('America/Mexico_City');
-
         Schema::create('opiniones', function (Blueprint $table) {
             $table->id('ID');
             $table->string('Nombre', 100);

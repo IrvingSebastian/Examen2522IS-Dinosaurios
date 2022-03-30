@@ -33,109 +33,24 @@
 @section('Contenido')
     <div class="blog-content">
       <div class="blog-image">
-        <img src="/img/blog3.jpg"> 
+        <img src="/img/blog1.jpg"> 
       </div>
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-      <h1>Header One</h1>
-      <h2>Header Two</h2>
-      <h3>Header Three</h3>
-      <h4>Header Four</h4>
-      <h5>Header Five</h5>
-      <h6>Header Six</h6>
-      <h2>Blockquote</h2>
-      <p>Single Line Blockquote</p>
-      <blockquote><p>Single Blockquote Example.</p></blockquote>
-      <p>Multiple Line Blockquote with Cite</p>
-      <blockquote><p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-      <cite>Admin &ndash; WpF Freeware</cite>  
-      </blockquote>
-      <h2>Table</h2>              
-      <table>
-        <thead>
-          <tr>
-            <th data-field="id">Name</th>
-            <th data-field="name">Item Name</th>
-            <th data-field="price">Item Price</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>
-      <h2>Unordered Lists (Nested)</h2>
-      <ul>
-        <li>List item one
-          <ul>
-            <li>List item one
-              <ul>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-                <li>List item four</li>
-              </ul>
-            </li>
-            <li>List item two</li>
-            <li>List item three</li>
-            <li>List item four</li>
-          </ul>
-        </li>
-        <li>List item two</li>
-        <li>List item three</li>
-        <li>List item four</li>
-      </ul>
-      <h2>Ordered List (Nested)</h2>
-      <ol>
-        <li>List item one
-          <ol>
-            <li>List item one
-              <ol>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-                <li>List item four</li>
-              </ol>
-            </li>
-            <li>List item two</li>
-            <li>List item three</li>
-            <li>List item four</li>
-          </ol>
-        </li>
-        <li>List item two</li>
-        <li>List item three</li>
-        <li>List item four</li>
-      </ol>
       
     </div>
     <!-- Start Blog Navigation -->
     <div class="blog-navigation">
       <div class="blog-navigation-left">
-        <a class="prev-post" href="#">Prev Post</a>
+        <a class="prev-post" href="#">Publicación Anterior</a>
       </div>
       <div class="blog-navigation-right">
-        <a class="next-post" href="#">Next Post</a>
+        <a class="next-post" href="#">Publicación Siguiente</a>
       </div>
     </div>
     <!-- Strat Related Post -->
     <div class="row">
       <div class="col s12">
         <div class="related-post">
-          <h2>You Might Also Like</h2>
+          <h2>Podría Interesarte</h2>
         </div>
         <div class="related-post-content">
           <div class="row">

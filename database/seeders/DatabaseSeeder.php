@@ -2,8 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\OrdenDinos;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\PublicacionSeeder;
+use Database\Seeders\DinosaurioSeeder;
+use Database\Seeders\OrdenDinoSeeder;
+use Database\Seeders\SubordenDinoSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(PublicacionSeeder::class);
+        $this->call(DinosaurioSeeder::class);
+        $this->call(OrdenDinoSeeder::class);
+        $this->call(SubordenDinoSeeder::class);
     }
 }

@@ -13,8 +13,6 @@ return new class extends Migration
      */
     public function up()
     {
-        date_default_timezone_set('America/Mexico_City');
-
         Schema::create('dinosaurios', function (Blueprint $table) {
             $table->id('ID');
             $table->unsignedBigInteger('ID_Suborden');
@@ -23,7 +21,7 @@ return new class extends Migration
             $table->string('Alimentación', 100);
             $table->string('Dimensiones', 100);
             $table->string('Ubicación Geográfica', 100);
-            $table->string('Descripción', 100);
+            $table->string('Descripción', 1000);
             $table->string('Imagen', 100);
             $table->timestamps();
         });

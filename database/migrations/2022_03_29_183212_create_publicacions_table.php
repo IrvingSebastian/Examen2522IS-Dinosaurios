@@ -12,16 +12,14 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
-        date_default_timezone_set('America/Mexico_City');
-        
+    {        
         Schema::create('publicaciones', function (Blueprint $table) {
             $table->id('ID');
-            $table->string('Titulo', 100);
-            $table->string('Autor', 100);
+            $table->string('Titulo', 1000);
+            $table->string('Autor', 1000);
             $table->string('Contenido', 5000);
-            $table->string('Imagen', 100);
-            $table->string('Resumen', 100);
+            $table->string('Imagen', 1000);
+            $table->string('Resumen', 1000);
             $table->timestamps();
         });
     }

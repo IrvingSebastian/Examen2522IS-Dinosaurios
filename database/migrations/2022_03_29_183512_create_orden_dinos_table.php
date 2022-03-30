@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        date_default_timezone_set('America/Mexico_City');
-
         Schema::create('orden_dinos', function (Blueprint $table) {
             $table->id('ID');
-            $table->string('Nombre', 100);
-            $table->string('Descripción', 100);
+            $table->string('Nombre', 1000);
+            $table->string('Descripción', 1000);
             $table->timestamps();
         });
     }

@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        date_default_timezone_set('America/Mexico_City');
-
         Schema::create('suborden_dinos', function (Blueprint $table) {
             $table->id('ID');
-            $table->unsignedBigInteger('ID_Grupo');
-            $table->foreign('ID_Grupo')->references('ID')->on('orden_dinos')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('Nombre', 100);
-            $table->string('Descripción', 100);
+            $table->unsignedBigInteger('ID_Orden');
+            $table->foreign('ID_Orden')->references('ID')->on('orden_dinos')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('Nombre', 1000);
+            $table->string('Descripción', 1000);
             $table->timestamps();
         });
     }
