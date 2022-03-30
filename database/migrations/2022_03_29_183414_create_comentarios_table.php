@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         date_default_timezone_set('America/Mexico_City');
-        
-        Schema::create('publicaciones', function (Blueprint $table) {
+
+        Schema::create('comentarios', function (Blueprint $table) {
             $table->id('ID');
-            $table->string('Titulo', 100);
-            $table->string('Autor', 100);
-            $table->string('Contenido', 5000);
-            $table->string('Imagen', 100);
-            $table->string('Resumen', 100);
+            $table->unsignedBigInteger('ID_Publi');
+            $table->foreign('ID_Publi')->references('ID')->on('publicaciones')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('Nombre', 100);
+            $table->string('Email', 100);
+            $table->string('Comentario', 500);
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publicaciones');
+        Schema::dropIfExists('comentarios');
     }
 };

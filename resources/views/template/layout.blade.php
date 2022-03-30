@@ -42,7 +42,6 @@
                 <!-- TEXT BASED LOGO -->
                 <a href="{{route('index')}}" class="brand-logo">Dinosaurs Watchers</a>
 
-                @if (Route::is('index'))
                   <!-- Menú Para La Vista Index -->                
                   <ul class="right hide-on-med-and-down custom-nav menu-scroll">
                     <li><a href="#edcuation">Introducción</a></li>
@@ -62,24 +61,6 @@
                     <li><a href="#footer">Contacto</a></li>
                   </ul>
                   <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                
-                @else
-                  <!-- Menú Para La Vista Index -->                
-                  <ul class="right hide-on-med-and-down custom-nav">
-                    <li><a href="{{route('index')}}">Inicio</a></li>
-                    <li class="{{!Route::is('blog') ?: 'active'}}"><a href="{{route('blog')}}">Blog</a></li>
-                    <li class="{{!Route::is('dinos') ?: 'active'}}"><a href="{{route('dinos',1)}}">Dinosaurios</a></li>
-                  </ul>
-                  <!-- Para Móviles -->
-                  <ul id="slide-out" class="side-nav">
-                    <li><a href="#blog-details">Inicio</a></li>
-                    <li class="{{!Route::is('blog') ?: 'active'}}"><a href="{{route('blog')}}">Blog</a></li>
-                    <li class="{{!Route::is('dinos') ?: 'active'}}"><a href="{{route('dinos',1)}}">Dinosaurios</a></li>
-                  </ul>
-                  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-              
-                @endif                
-              
               </div>
             </div>
           </nav>

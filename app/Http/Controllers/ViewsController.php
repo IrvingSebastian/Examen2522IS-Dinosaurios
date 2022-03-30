@@ -25,9 +25,9 @@ class ViewsController extends Controller
     }
 
     //Función del Blog con Tema
-    public function blogTema($tema)
+    public function publicacion($tema)
     {
-        return view('blogTema', ['Tema' => $tema]);
+        return view('publicacion', ['Tema' => $tema]);
     }
 
     //Función del Detalle de los Dinosaurios
