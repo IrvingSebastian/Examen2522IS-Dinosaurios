@@ -218,7 +218,7 @@
                       <p>{{$Publi['Resumen']}}</p>
                     </div>
                     <div class="card-action">
-                      <a class="post-comment"><i class="material-icons">comment</i><span>{{$NumeroC}}</span></a>
+                      <a class="post-comment"><i class="material-icons">comment</i><span>{{$Publi->Comentarios->count()}}</span></a>
                       <a class="readmore-btn" href="{{route('publicacion', $Publi['ID'])}}">Leer Más...</a>
                     </div>
                   </div>

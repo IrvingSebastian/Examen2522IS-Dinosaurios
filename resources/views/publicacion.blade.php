@@ -21,7 +21,7 @@
                 Post By {{$Publi['Autor']}}</a>
               </div>
               <div class="single-meta">
-                <a href="#comments" class="post-comment"><i class="material-icons">comment</i><span>{{$Comentarios->count()}}</span></a>
+                <a href="#comments" class="post-comment"><i class="material-icons">comment</i><span>{{$Publi->Comentarios->count()}}</span></a>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@
                     <p>{{$Publi['Resumen']}}</p>
                   </div>
                   <div class="card-action">
-                    <a class="post-comment"><i class="material-icons">comment</i><span>{{$NumeroC}}</span></a>
+                    <a class="post-comment"><i class="material-icons">comment</i><span>{{$PubliAlterna->Comentarios->count()}}</span></a>
                     <a class="readmore-btn" href="{{route('publicacion', $PubliAlterna['ID'])}}">Leer Más...</a>
                   </div>
                 </div>
@@ -109,16 +109,16 @@
     <div class="row">
       <div class="col s12">
         <div class="comments-area" id="comments">
-          @if($Comentarios->count() == 0)
+          @if($Publi->Comentarios->count() == 0)
             <h3 class="comments-title">Aún No Hay Comentarios</h3>
           @else
-            <h3 class="comments-title">{{$Comentarios->count()}} Comentarios</h3>
+            <h3 class="comments-title">{{$Publi->Comentarios->count()->count()}} Comentarios</h3>
           @endif
           <div class="comments">
             <ul class="commentlist">
               <!-- Aquí se cargan los Comentarios -->	
 
-              @foreach ($Comentarios as $Comentario)
+              @foreach ($Publi->Comentarios as $Comentario)
                 <li>
                   <div class="media">
                     <div class="media-left">    
@@ -154,5 +154,4 @@
     </div>
   </div>  
   @endforeach  
-
 @endsection

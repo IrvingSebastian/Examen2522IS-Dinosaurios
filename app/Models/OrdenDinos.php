@@ -9,4 +9,9 @@ class OrdenDinos extends Model
 {
     use HasFactory;
     protected $table = 'orden_dinos';
+
+    public function Subordenes()
+    {
+        return $this->hasMany(SubordenDinos::class, 'ID');
+    }
 }

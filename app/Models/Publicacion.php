@@ -9,4 +9,9 @@ class Publicacion extends Model
 {
     use HasFactory;
     protected $table = 'publicaciones';
+
+    public function Comentarios()
+    {
+        return $this->hasMany(Comentario::class, 'ID');
+    }
 }
