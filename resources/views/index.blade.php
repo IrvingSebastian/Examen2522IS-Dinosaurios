@@ -43,7 +43,7 @@
           denominándose esa época como la era de los dinosaurios. Hay que recordar que en 
           su mayoría, estos enormes lagartos eran herbívoros y probablemente poco agresivos, 
           por otro lado, los pocos eran los carnívoros. En general, estos animales tenían un 
-          cerebro ridiculamente pequeño en comparació con su enorme tamaño corporal. <br><br>
+          cerebro ridiculamente pequeño en comparación con su enorme tamaño corporal. <br><br>
           La era de los dinosaurios, es decir el Mesozoico se divide en tres períodos, 
           que a su vez están compuestos por diferentes épocas con distintas edades. 
           Los períodos son el Triásico, el Jurásico y el Cretácico. En el límite inferior del Mesozoico tuvo 
