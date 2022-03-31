@@ -9,4 +9,7 @@ class Opinion extends Model
 {
     use HasFactory;
     protected $table = 'opiniones';
+
+    //Hacer editables los campos de la tabla
+    protected $fillable = ['Nombre', 'Email', 'Asunto', 'Mensaje'];
 }

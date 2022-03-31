@@ -10,6 +10,7 @@ class Publicacion extends Model
     use HasFactory;
     protected $table = 'publicaciones';
 
+    //Relación uno a muchos con la tabla de Comentarios
     public function Comentarios()
     {
         return $this->hasMany(Comentario::class, 'ID');

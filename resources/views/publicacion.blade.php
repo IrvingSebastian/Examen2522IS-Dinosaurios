@@ -112,7 +112,7 @@
           @if($Publi->Comentarios->count() == 0)
             <h3 class="comments-title">Aún No Hay Comentarios</h3>
           @else
-            <h3 class="comments-title">{{$Publi->Comentarios->count()->count()}} Comentarios</h3>
+            <h3 class="comments-title">{{$Publi->Comentarios->count()}} Comentarios</h3>
           @endif
           <div class="comments">
             <ul class="commentlist">

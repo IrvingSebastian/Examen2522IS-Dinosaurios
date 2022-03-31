@@ -106,6 +106,9 @@
       <script src="/js/jquery.counterup.min.js"></script>     
 
       <!-- Custom Js -->
-      <script src="/js/custom.js"></script>   
+      <script src="/js/custom.js"></script>  
+
+      @yield('Script')
+
     </body>
   </html>

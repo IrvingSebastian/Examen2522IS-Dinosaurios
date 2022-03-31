@@ -10,6 +10,7 @@ class OrdenDinos extends Model
     use HasFactory;
     protected $table = 'orden_dinos';
 
+    //Relación uno a muchos con la tabla de SubordenDinos
     public function Subordenes()
     {
         return $this->hasMany(SubordenDinos::class, 'ID');

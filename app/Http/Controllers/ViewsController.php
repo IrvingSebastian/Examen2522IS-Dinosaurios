@@ -9,9 +9,6 @@ use App\Models\Dinosaurio;
 //Modelo de Publicaciones
 use App\Models\Publicacion;
 
-//Modelo de Comentarios
-use App\Models\Comentario;
-
 //Modelo de Opiniones
 use App\Models\Opinion;
 

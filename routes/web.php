@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewsController;
+use App\Http\Controllers\FormulariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,8 @@ Route::get('/publicacion/{id}', [ViewsController::class, 'publicacion'])->name('
 
 //Rutas de los Dinosaurios
 Route::get('/dinos/{id}', [ViewsController::class, 'dinos'])->name('dinos');
+
+//Rutas de los Formularios
+Route::post('/opinion', [FormulariosController::class, 'opinion'])->name('opinion');
+Route::post('/comentario', [FormulariosController::class, 'comentario'])->name('comentario');
 

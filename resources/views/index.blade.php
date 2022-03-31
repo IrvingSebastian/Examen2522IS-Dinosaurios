@@ -328,31 +328,61 @@
             <h2 class="title">Contacto</h2>
             <p>¿Alguna duda, queja o sugerencia, o alguna opinión? Puedes dejarla llenando el formulario
               de abajo. Si deseas que tu opinión aparezca en la página, llena el campo de Asunto con el texto
-              "Opinión" y tu mensaje aparecerá.</p>
+              "Opinión" y tu mensaje aparecerá (También al enviar tu mensaje una alerta te indicará la nacionalidad
+              de tu nombre mediante probabilidad XD).</p>
             </p>
             <div class="contact">
               <div class="row">
                 <div class="col s12 m6 l6">
                   <div class="contact-form">
-                    <form>
+                    
+                    <!--- Formulario de Opinión -->
+                    <form action="{{route('opinion')}}" method="post">
+
+                      <!-- Errores -->
+                      @foreach ($errors->all() as $error)
+                        <p class="alert alert-danger">{{ $error}}</p><br>
+                      @endforeach
+
+                      <!-- Token Único -->
+                      {!! csrf_field() !!}
+
                       <div class="input-field">
-                        <input type="text" class="input-box" name="contactName" id="contact-name">
+                        <input type="text" class="input-box" name="nombre_O" id="nombre_O" required maxlength="100" minlength="4">
                         <label class="input-label" for="contact-name">Nombre</label>
                       </div>
                       <div class="input-field">
-                        <input type="email" class="input-box" name="contactEmail" id="email">
+                        <input type="email" class="input-box" name="email_O" id="email_O" required maxlength="100" minlength="5">
                         <label class="input-label" for="email">Email</label>
                       </div>
                       <div class="input-field">
-                        <input type="text" class="input-box" name="contactSubject" id="subject">
+                        <input type="text" class="input-box" name="asunto_O" id="asunto_O" required maxlength="100" minlength="4">
                         <label class="input-label" for="subject">Asunto</label>
                       </div>
                       <div class="input-field textarea-input">
-                        <textarea class="materialize-textarea" name="contactMessage" id="textarea1"></textarea>
+                        <textarea class="materialize-textarea" name="mensaje_O" id="mensaje_O" required maxlength="500" minlength="4"></textarea>
                         <label class="input-label" for="textarea1">Mensaje</label>
                       </div>
+
+                      <!-- Mensaje de Enviado -->
+                      @if (session('status')) 
+                        <div class="input-field">
+                          <p style="font-size:15px" onmouseover="enviar()">{{session('status')}}</p>
+                        </div>
+                        
+                        <!--- Recorrer los Países -->
+                        @foreach ((session('Paises')) as $Pais) 
+                          <div class="input-field">
+                            <p style="font-size: 15px">
+                              ID del País: {{$Pais['ID']}} <br>
+                              Probabilidad de Nacionalidad: {{$Pais['Probabilidad']}}</p>
+                          </div>
+                        @endforeach
+
+                      @endif
                       <button class="left waves-effect btn-flat brand-text submit-btn" type="submit">Enviar</button>
                     </form>
+
                   </div>
                 </div>
                 <div class="col s12 m6 l6">
@@ -367,4 +397,18 @@
       </div>
     </div>
   </div>
+@endsection
+
+@section('Script')
+  <!-- Alertas -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    function enviar(){
+      swal({
+        title: "¡MENSAJE ENVIADO!",
+        text: "Gracias por lo que sea que haya enviado...",
+        icon: "success",
+      });
+    }
+  </script>
 @endsection

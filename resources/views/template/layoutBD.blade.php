@@ -146,21 +146,53 @@
                         <div class="contact">
                         <div class="col s12 m6 l6">
                             <div class="contact-form">
-                            <form>
+
+                            <!--- Formulario de Comentarios -->
+                            <form action="{{route('comentario')}}" method="post">
+
+                              <!-- Errores -->
+                              @foreach ($errors->all() as $error)
+                                <p class="alert alert-danger">{{ $error}}</p><br>
+                              @endforeach
+
+                              <!-- Token Único -->
+                              {!! csrf_field() !!}
+
+                              <div class="input-field">
+                              <input type="text" class="input-box" name="nombre_C" id="nombre_C" required maxlength="100" minlength="4">
+                              <label class="input-label" for="contact-name">Nombre</label>
+                              </div>
+                              <div class="input-field">
+                              <input type="email" class="input-box" name="email_C" id="email_C" required maxlength="100" minlength="4">
+                              <label class="input-label" for="email">Email</label>
+                              </div>
+                              <div class="input-field textarea-input">
+                              <textarea class="materialize-textarea" name="comentario_C" id="comentario_C" required maxlength="500" minlength="4"></textarea>
+                              <label class="input-label" for="textarea1">Comentario</label>
+                              </div>
+                              <input type="hidden" id="id_C" name="id_C" value="{{$ID}}">
+
+
+                              <!-- Mensaje de Enviado -->
+                              @if (session('status')) 
                                 <div class="input-field">
-                                <input type="text" class="input-box" name="contactName" id="contact-name">
-                                <label class="input-label" for="contact-name">Nombre</label>
+                                  <p style="font-size:15px" onmouseover="enviar()">{{session('status')}}</p>
                                 </div>
-                                <div class="input-field">
-                                <input type="email" class="input-box" name="contactEmail" id="email">
-                                <label class="input-label" for="email">Email</label>
-                                </div>
-                                <div class="input-field textarea-input">
-                                <textarea class="materialize-textarea" name="contactMessage" id="textarea1"></textarea>
-                                <label class="input-label" for="textarea1">Comentario</label>
-                                </div>
-                                <button class="left waves-effect btn-flat brand-text submit-btn" type="submit">Enviar Comentario</button>
+                              
+                                <!--- Recorrer los Países -->
+                                @foreach ((session('Paises')) as $Pais) 
+                                  <div class="input-field">
+                                    <p style="font-size: 15px">
+                                      ID del País: {{$Pais['ID']}} <br>
+                                      Probabilidad de Nacionalidad: {{$Pais['Probabilidad']}}</p>
+                                  </div>
+                                @endforeach
+
+                              @endif
+
+                              <button class="left waves-effect btn-flat brand-text submit-btn" type="submit">Enviar Comentario</button>
                             </form>
+
                             </div>
                         </div>
                         </div>
@@ -205,5 +237,16 @@
 
       <!-- Custom Js -->
       <script src="/js/custom.js"></script>   
+      <!-- Alertas -->
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+        function enviar(){
+          swal({
+            title: "¡MENSAJE ENVIADO!",
+            text: "Gracias por lo que sea que haya enviado...",
+            icon: "success",
+          });
+        }
+      </script>
     </body>
   </html>
