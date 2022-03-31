@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Acerca de la Página
 
-Irving Gregorio Sebastián Ildefonso <br>
+Autor: Irving Sebastián - 2522IS <br>
 Página creada en base a un Sticker, consumiendo una API.
 
 - [Página Web](http://dinosaurs-watchers-ig51.herokuapp.com).
