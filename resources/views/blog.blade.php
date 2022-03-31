@@ -44,7 +44,6 @@
           <p>{{$Publi['Resumen']}}</p>
         </div>
         <div class="card-action">
-          <a class="post-comment"><i class="material-icons">comment</i><span>{{$Publi->Comentarios->count()}}</span></a>
           <a href="{{route('publicacion', $Publi['ID'])}}" class="readmore-btn">Leer Más</a>
         </div>
       </div>

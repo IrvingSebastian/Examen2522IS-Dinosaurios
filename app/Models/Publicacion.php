@@ -11,7 +11,7 @@ class Publicacion extends Model
     protected $table = 'publicaciones';
 
     //Relación uno a muchos con la tabla de Comentarios
-    public function Comentarios()
+    public function Comentas()
     {
         return $this->hasMany(Comentario::class, 'ID');
     }

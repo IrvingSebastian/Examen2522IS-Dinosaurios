@@ -21,7 +21,7 @@
                 Post By {{$Publi['Autor']}}</a>
               </div>
               <div class="single-meta">
-                <a href="#comments" class="post-comment"><i class="material-icons">comment</i><span>{{$Publi->Comentarios->count()}}</span></a>
+                <a href="#comments" class="post-comment"><i class="material-icons">comment</i><span>{{$Comentarios->count()}}</span></a>
               </div>
             </div>
           </div>
@@ -94,7 +94,6 @@
                     <p>{{$Publi['Resumen']}}</p>
                   </div>
                   <div class="card-action">
-                    <a class="post-comment"><i class="material-icons">comment</i><span>{{$PubliAlterna->Comentarios->count()}}</span></a>
                     <a class="readmore-btn" href="{{route('publicacion', $PubliAlterna['ID'])}}">Leer Más...</a>
                   </div>
                 </div>
@@ -109,26 +108,30 @@
     <div class="row">
       <div class="col s12">
         <div class="comments-area" id="comments">
-          @if($Publi->Comentarios->count() == 0)
+
+          <!-- Condicional para los Comentarios -->
+          @if($Comentarios->count() == 0)
             <h3 class="comments-title">Aún No Hay Comentarios</h3>
+          @elseif($Comentarios->count() == 1)
+            <h3 class="comments-title">{{$Comentarios->count()}} Comentario</h3>
           @else
-            <h3 class="comments-title">{{$Publi->Comentarios->count()}} Comentarios</h3>
+            <h3 class="comments-title">{{$Comentarios->count()}} Comentarios</h3>
           @endif
+
           <div class="comments">
             <ul class="commentlist">
               <!-- Aquí se cargan los Comentarios -->	
 
-              @foreach ($Publi->Comentarios as $Comentario)
+              @foreach ($Comentarios as $Comentario)
                 <li>
                   <div class="media">
                     <div class="media-left">    
-                      <img class="media-object news-img" src="/img/profile-img1.jpg" alt="img">      
+                      <img class="media-object news-img" src="/img/user.webp" alt="img">      
                     </div>
                     <div class="media-body">
-                      <h4 class="author-name">Dr. Jack Johnson</h4>
-                      <span class="comments-date"> May 16, 2015 / 10:29 am</span>
-                      <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                      <a href="#" class="reply-btn">Reply</a>
+                      <h4 class="author-name">{{$Comentario['Nombre']}}</h4>
+                      <span class="comments-date">{{$Comentario['created_at']}}</span>
+                      <p>{{$Comentario['Comentario']}}</p>
                     </div>
                   </div>
                 </li>

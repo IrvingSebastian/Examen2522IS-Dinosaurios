@@ -54,7 +54,7 @@ class FormulariosController extends Controller
         }
 
         //Redireccionar a la vista de la Inicio
-        return redirect()->route('index#footer')->with('status', 'Mensaje Enviado')->with('Paises', $Paises);
+        return redirect()->route('index')->with('status', 'Mensaje Enviado')->with('Paises', $Paises);
     }
 
     //Función de Registro de Comentarios

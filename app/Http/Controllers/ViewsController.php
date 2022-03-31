@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
 //Modelo de Dinosaurio
@@ -11,6 +12,9 @@ use App\Models\Publicacion;
 
 //Modelo de Opiniones
 use App\Models\Opinion;
+
+//Modelo de Comentarios
+use App\Models\Comentario;
 
 class ViewsController extends Controller
 {
@@ -97,8 +101,12 @@ class ViewsController extends Controller
         //Obtener Publicación con el ID
         $Publi = Publicacion::find($ID);
 
+        $Comentarios = Comentario::select("*")
+            ->where("ID_Publi", "=", $ID)
+            ->get();
+
         //Retornar la vista y enviarle los datos
-        return view('publicacion', ['ID' => $ID,'Publi' => $Publi, 'Dinos' => $Dinos, 'PublisAlternas' => $PublisAlternas]);
+        return view('publicacion', ['ID' => $ID,'Publi' => $Publi, 'Dinos' => $Dinos, 'PublisAlternas' => $PublisAlternas, 'Comentarios' => $Comentarios]);
     }
 
     //Función del Detalle de los Dinosaurios

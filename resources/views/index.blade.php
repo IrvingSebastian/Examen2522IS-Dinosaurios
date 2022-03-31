@@ -218,7 +218,6 @@
                       <p>{{$Publi['Resumen']}}</p>
                     </div>
                     <div class="card-action">
-                      <a class="post-comment"><i class="material-icons">comment</i><span>{{$Publi->Comentarios->count()}}</span></a>
                       <a class="readmore-btn" href="{{route('publicacion', $Publi['ID'])}}">Leer Más...</a>
                     </div>
                   </div>
@@ -241,43 +240,40 @@
   <div class="row">
     <div class="col s12">
       <div class="testimonial-inner">
+        <!-- Condicional para las Opiniones -->
+        @if ($Opiniones->count()==0)
+          <h2 class="title">Aún No Hay Opiniones</h2>
+        @else
         <h2 class="title">Opiniones</h2>
         <!-- Start Testimonial Slider -->
         <div class="testimonial-slider-area">
           <div id="owl-carousel2" class="testimonial-slider row">
 
             <!-- Aquí se cargan las Opiniones -->
+            @foreach ($Opiniones as $Opinion)
             <div class="col s12">
               <div class="single-testimonial">
                 <div class="testimonial-img">
-                  <img src="img/profile-img.jpg" alt="img">
+                  <img src="/img/user.webp" alt="img">
                 </div>
                 <div class="testimonial-content">
-                  <h3>Mike Jones</h3>
-                  <span>CEO, Google Inc.</span>
-                  <p>"The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"</p>
+                  <h3>{{$Opinion['Nombre']}}</h3>
+                  <span>{{$Opinion['Email']}}</span>
+                  <p>Fecha: {{$Opinion['created_at']}}</p>
+                  <p>{{$Opinion['Mensaje']}}</p>
                 </div>
               </div>
             </div>
-            <div class="col s12">
-              <div class="single-testimonial">
-                <div class="testimonial-img">
-                  <img src="img/profile-img.jpg" alt="img">
-                </div>
-                <div class="testimonial-content">
-                  <h3>Mike Jones</h3>
-                  <span>CEO, Google Inc.</span>
-                  <p>"The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"</p>
-                </div>
-              </div>
-            </div>
-                                                
+            @endforeach
+                                              
           </div>
           <div class="customNavigation">
             <a class="btn prev2 btn-floating waves-effect waves-light btn-large white"><i class="mdi-navigation-chevron-left brand-text"></i></a>
             <a class="btn next2 btn-floating waves-effect waves-light btn-large white"><i class="mdi-navigation-chevron-right brand-text"></i></a>
           </div>                  
         </div>
+        @endif
+
       </div>
     </div>
     </div> 

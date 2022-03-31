@@ -181,7 +181,7 @@ jQuery(function($){
 	
 	jQuery(".call-to-about").click(function() {
     jQuery('html,body').animate({
-        scrollTop: $("#about").offset().top},
+        scrollTop: $("#footer").offset().top},
         'slow');
 	});
 
