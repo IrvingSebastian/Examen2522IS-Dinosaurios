@@ -169,7 +169,7 @@
           <!-- Aquí se cargan los Dinosaurios -->
           @foreach ($Dinos as $Dino)
             <div class="mix {{$Dino['ID_Suborden']}}" data-value="2">
-              <a href="#">
+              <a href="{{route('dinos', $Dino['ID'])}}">
                 <img src="{{$Dino['Imagen']}}" alt="img">
                 <i class="material-icons view-icon">pageview</i>
               </a>

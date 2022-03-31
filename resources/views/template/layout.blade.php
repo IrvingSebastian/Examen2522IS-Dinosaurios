@@ -42,7 +42,9 @@
                 <!-- TEXT BASED LOGO -->
                 <a href="{{route('index')}}" class="brand-logo">Dinosaurs Watchers</a>
 
-                  <!-- Menú Para La Vista Index -->                
+                <!-- Condicional del Menú -->
+                @if (Route::is('index'))
+                <!-- Menú Para La Vista Index -->                
                   <ul class="right hide-on-med-and-down custom-nav menu-scroll">
                     <li><a href="#edcuation">Introducción</a></li>
                     <li><a href="#portfolio">Dinosaurios</a></li>
@@ -61,6 +63,19 @@
                     <li><a href="#footer">Contacto</a></li>
                   </ul>
                   <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                
+                @else
+                  <!-- Menú Para Las Otras Vistas -->                
+                  <ul class="right hide-on-med-and-down custom-nav menu-scroll">
+                    <li><a href="#footer">Contacto</a></li>
+                  </ul>
+                  <!-- Para Móviles -->
+                  <ul id="slide-out" class="side-nav menu-scroll">
+                    <li><a href="#footer">Contacto</a></li>
+                  </ul>
+                  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                @endif
+
               </div>
             </div>
           </nav>
