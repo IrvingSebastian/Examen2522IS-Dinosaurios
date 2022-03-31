@@ -143,7 +143,7 @@ class PublicacionSeeder extends Seeder
 
         // Museos de dinosaurios en México
         ' <p style="font-size: 18px">Si te gusta el universo de los dinosaurios, entonces tienes que descubrir los 
-        tesoros que resguardan los museos de estas especies desparecidas, entre información sobre su existencia 
+        tesoros que resguardan los museos de estas especies desaparecidas, entre información sobre su existencia 
         sobre la Tierra, así como material que te describe dónde fueron hallados sus restos.
         </p>
         <div class="blog-image">
@@ -278,7 +278,7 @@ class PublicacionSeeder extends Seeder
     
             // Museos de dinosaurios en México
             'Si te gusta el universo de los dinosaurios, entonces tienes que descubrir los 
-            tesoros que resguardan los museos de estas especies desparecidas, entre información sobre su existencia 
+            tesoros que resguardan los museos de estas especies desaparecidas, entre información sobre su existencia 
             sobre la Tierra, así como material que te describe dónde fueron hallados sus restos.',
             
             // Causas de extinción
