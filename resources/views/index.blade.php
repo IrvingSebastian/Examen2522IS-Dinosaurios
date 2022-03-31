@@ -40,7 +40,7 @@
           los peces, luego los anfibios y por último los reptiles, que han logrado ser los más
           fascinantes para el ser humano, hasta ahora.<br><br>
           Estos reptiles se hicieron los amos del planeta durante casi 200 millones de años,
-          denominámdose esa época como la era de los dinosaurios. Hay que recordar que en 
+          denominándose esa época como la era de los dinosaurios. Hay que recordar que en 
           su mayoría, estos enormes lagartos eran herbívoros y probablemente poco agresivos, 
           por otro lado, los pocos eran los carnívoros. En general, estos animales tenían un 
           cerebro ridiculamente pequeño en comparació con su enorme tamaño corporal. <br><br>
