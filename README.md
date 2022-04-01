@@ -2,12 +2,15 @@
 
 ## Acerca de la Página
 
-Autor: Irving Sebastián - 2522IS <br>
+<strong>Autor: <strong>Irving Sebastián - 2522IS <br>
 Página Web de Dinosaurios, creada con base en un Sticker; y además consumiendo una API.
 
-- .[Vídeo Explicativo](https://youtu.be/te2RvcmEj1o).
+- [Vídeo Explicativo](https://youtu.be/te2RvcmEj1o).
 - [Página Web](http://dinosaurs-watchers-ig51.herokuapp.com).
 - [Link de la API](https://nationalize.io).
+    
+## Guía Breve
+
 
 ## License
 
