@@ -9,13 +9,20 @@ Página Web de Dinosaurios, creada con base en un Sticker; y además consumiendo
 - [Página Web](http://dinosaurs-watchers-ig51.herokuapp.com).
 - [Link de la API](https://nationalize.io).
     
+<p align="center"><img src="https://wallpaperaccess.com/full/3268506.jpg" width="400"></p>
+    
 ## Detalles sobre los Formularios
 El primer formulario que se encuentra en la [Página Inicial](http://dinosaurs-watchers-ig51.herokuapp.com), cuenta con 4 campos, estos tienen algunas condiciones para que el formulario funcione correctamente.
 - <strong>Nombre: </strong> Mínimo 4 caracteres, máximo 100.
-- <strong>Email: </strong> Mínimo 5 caracteres, máximo 100, requiere además un "@".
-- <strong>Asunto: </strong> Mínimo 4 caracteres, máximo 100.
+- <strong>Email: </strong> Mínimo 5 caracteres, máximo 100; requiere además un "@".
+- <strong>Asunto: </strong> Mínimo 4 caracteres, máximo 100; si aquí colocas "Opinión", tu mensaje aparecerá en la página inicial.
 - <strong>Mensaje: </strong> Mínimo 4 caracteres, máximo 500.
 
+El segundo formulario que se encuentra en cualquier publicación del [Blog](http://dinosaurs-watchers-ig51.herokuapp.com/blog), cuenta con 4 campos, estos tienen algunas condiciones para que el formulario funcione correctamente.
+- <strong>Nombre: </strong> Mínimo 4 caracteres, máximo 100.
+- <strong>Email: </strong> Mínimo 5 caracteres, máximo 100; requiere además un "@".
+- <strong>Comentario: </strong> Mínimo 4 caracteres, máximo 500.
+Cualquier comentario que dejes aparecerá en la página de la publicación.
 
 ## License
 
