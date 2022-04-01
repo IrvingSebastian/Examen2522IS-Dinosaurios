@@ -5,9 +5,9 @@
 <strong>Autor: </strong>Irving Sebastián - 2522IS <br>
 Página Web de Dinosaurios, creada con base en un Sticker; y además consumiendo una API.
 
-- [Vídeo Explicativo](https://youtu.be/te2RvcmEj1o).
-- [Página Web](http://dinosaurs-watchers-ig51.herokuapp.com).
-- [Link de la API](https://nationalize.io).
+- <a href="https://youtu.be/te2RvcmEj1o" target="_blank">Vídeo Explicativo</a>.
+- <a href="http://dinosaurs-watchers-ig51.herokuapp.com" target="_blank">Página Web</a>.
+- <a href="https://nationalize.io" target="_blank">Link de la API</a>.
     
 <p align="center"><img src="https://wallpaperaccess.com/full/3268506.jpg" width="400"></p>
     
@@ -23,6 +23,11 @@ El segundo formulario que se encuentra en cualquier publicación del [Blog](http
 - <strong>Email: </strong> Mínimo 5 caracteres, máximo 100; requiere además un "@".
 - <strong>Comentario: </strong> Mínimo 4 caracteres, máximo 500.
 Cualquier comentario que dejes aparecerá en la página de la publicación.
+
+## Funcionalidad de la API
+La [API](https://nationalize.io), recibe un parametro "Nombre", y en base a ese retorna una serie de ID's de países junto con la probabilidad de que seas de determinado país. Si deseas consultarlo puedes usar los formularios, lo hacen en automático, si lo deseas también puedes consultar el Siguiente Link:
+- https://api.nationalize.io?name=Greg
+Solo edita el nombre Greg, por el que desees ;)
 
 ## License
 
