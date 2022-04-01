@@ -2,14 +2,19 @@
 
 ## Acerca de la Página
 
-<strong>Autor: <strong>Irving Sebastián - 2522IS <br>
+<strong>Autor: </strong>Irving Sebastián - 2522IS <br>
 Página Web de Dinosaurios, creada con base en un Sticker; y además consumiendo una API.
 
 - [Vídeo Explicativo](https://youtu.be/te2RvcmEj1o).
 - [Página Web](http://dinosaurs-watchers-ig51.herokuapp.com).
 - [Link de la API](https://nationalize.io).
     
-## Guía Breve
+## Detalles sobre los Formularios
+El primer formulario que se encuentra en la [Página Inicial](http://dinosaurs-watchers-ig51.herokuapp.com), cuenta con 4 campos, estos tienen algunas condiciones para que el formulario funcione correctamente.
+<strong>- Nombre: </strong> Mínimo 4 caracteres, máximo 100.
+<strong>- Email: </strong> Mínimo 5 caracteres, máximo 100, requiere además un "@".
+<strong>- Asunto: </strong> Mínimo 4 caracteres, máximo 100.
+<strong>- Mensaje: </strong> Mínimo 4 caracteres, máximo 500.
 
 
 ## License
