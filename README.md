@@ -9,7 +9,7 @@ Página Web de Dinosaurios, creada con base en un Sticker; y además consumiendo
 - <a href="http://dinosaurs-watchers-ig51.herokuapp.com" target="_blank">Página Web</a>.
 - <a href="https://nationalize.io" target="_blank">Link de la API</a>.
     
-<p align="center"><img src="https://wallpaperaccess.com/full/3268506.jpg" width="500" height="900"></p>
+<p align="center"><img src="https://wallpaperaccess.com/full/3268506.jpg" width="500" height="400"></p>
     
 ## Detalles sobre los Formularios
 El primer formulario que se encuentra en la [Página Inicial](http://dinosaurs-watchers-ig51.herokuapp.com), cuenta con 4 campos, estos tienen algunas condiciones para que el formulario funcione correctamente.
@@ -24,12 +24,15 @@ El segundo formulario que se encuentra en cualquier publicación del [Blog](http
 - <strong>Comentario: </strong> Mínimo 4 caracteres, máximo 500.
 Cualquier comentario que dejes aparecerá en la página de la publicación.
 
+<p align="center"><img src="https://i1.wp.com/css-tricks.com/wp-content/uploads/2016/06/input-placeholder.gif" width="500" height="400"></p>
+
+
 ## Funcionalidad de la API
 La [API](https://nationalize.io), recibe un parametro "Nombre", y en base a ese retorna una serie de ID's de países junto con la probabilidad de que seas de determinado país. Si deseas consultarlo puedes usar los formularios, lo hacen en automático, si lo deseas también puedes consultar el Siguiente Link:
 - https://api.nationalize.io?name=Greg <br>
 Solo edita el nombre Greg, por el que desees ;)
 
-<p align="center"><img src="https://media1.tenor.com/images/41a1d343c07734a359fef980b02d3019/tenor.gif" width="500" height="900"></p>
+<p align="center"><img src="https://media1.tenor.com/images/41a1d343c07734a359fef980b02d3019/tenor.gif" width="500" height="400"></p>
 
 ## License
 
