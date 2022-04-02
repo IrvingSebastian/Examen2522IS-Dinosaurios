@@ -38,7 +38,7 @@ Solo edita el nombre "Greg", por el que desees 😉
 ## Agradecimiento 💖
 
 Gracias por leer hasta acá, espero que visites la página y veas el vídeo, además puedes revisar otros proyectos en la misma página. 😉<br>
-Además quiero agradecer a mi docente Emmanuel Torres, por todos los conocimientos que adquirí en estos 3 meses 🤝, y a mis compañeros por sus errores, ya que sin querer, me hicieron aplicar mis conocimientos... 🤝
+Además quiero agradecer a mi docente Emmanuel Torres, por todos los conocimientos que adquirí en estos 3 meses 🤝, y a mis compañeros de carrera, ya que sin querer, me hicieron aplicar mis conocimientos... 🤝<br>
 💖 ¡Muchas Gracias! 💖
 
 <p align="center"><img src="https://c.tenor.com/9K7t67N5JWIAAAAC/untan-yui-hirasawa.gif" width="500" height="400"></p>
