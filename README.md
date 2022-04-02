@@ -35,9 +35,10 @@ Solo edita el nombre "Greg", por el que desees 😉
 <p align="center"><img src="https://media1.tenor.com/images/41a1d343c07734a359fef980b02d3019/tenor.gif" width="500" height="400"></p>
 
 
-## Agradecimiento
+## Agradecimiento 💖
 
-Gracias por visitar la página y por ver el vídeo, puedes revisar otros proyectos en la misma página 😉
+Gracias por leer hasta acá, espero que visites la página y veas el vídeo, además puedes revisar otros proyectos en la misma página. 😉<br>
+💖 ¡Muchas Gracias! 💖
 
 <p align="center"><img src="https://c.tenor.com/9K7t67N5JWIAAAAC/untan-yui-hirasawa.gif" width="500" height="400"></p>
 
