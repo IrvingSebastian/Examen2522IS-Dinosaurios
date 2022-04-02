@@ -43,6 +43,3 @@ Además quiero agradecer a mi docente Emmanuel Torres, por todos los conocimient
 
 <p align="center"><img src="https://c.tenor.com/9K7t67N5JWIAAAAC/untan-yui-hirasawa.gif" width="500" height="400"></p>
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
