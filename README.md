@@ -18,7 +18,7 @@ El primer formulario que se encuentra en la [Página Inicial](http://dinosaurs-w
 - <strong>Asunto: </strong> Mínimo 4 caracteres, máximo 100; si aquí colocas "Opinión", tu mensaje aparecerá en la página inicial.
 - <strong>Mensaje: </strong> Mínimo 4 caracteres, máximo 500.
 
-El segundo formulario que se encuentra en cualquier publicación del [Blog](http://dinosaurs-watchers-ig51.herokuapp.com/blog), cuenta con 4 campos, estos tienen algunas condiciones para que el formulario funcione correctamente.
+El segundo formulario que se encuentra en cualquier publicación del [Blog](http://dinosaurs-watchers-ig51.herokuapp.com/blog), cuenta con 3 campos, estos tienen algunas condiciones para que el formulario funcione correctamente.
 - <strong>Nombre: </strong> Mínimo 4 caracteres, máximo 100.
 - <strong>Email: </strong> Mínimo 5 caracteres, máximo 100; requiere además un "@".
 - <strong>Comentario: </strong> Mínimo 4 caracteres, máximo 500.
@@ -30,7 +30,7 @@ Cualquier comentario que dejes aparecerá en la página de la publicación.
 ## Funcionalidad de la API
 La [API](https://nationalize.io), recibe un parametro "Nombre", y en base a ese retorna una serie de ID's de países junto con la probabilidad de que seas de determinado país. Si deseas consultarlo puedes usar los formularios, lo hacen en automático, si lo deseas también puedes consultar el Siguiente Link:
 - https://api.nationalize.io?name=Greg <br>
-Solo edita el nombre Greg, por el que desees ;)
+Solo edita el nombre "Greg", por el que desees ;)
 
 <p align="center"><img src="https://media1.tenor.com/images/41a1d343c07734a359fef980b02d3019/tenor.gif" width="500" height="400"></p>
 
