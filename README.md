@@ -11,6 +11,7 @@ Página Web de Dinosaurios, creada con base en un Sticker; y además consumiendo
     
 <p align="center"><img src="https://wallpaperaccess.com/full/3268506.jpg" width="500" height="400"></p>
     
+    
 ## Detalles sobre los Formularios
 El primer formulario que se encuentra en la [Página Inicial](http://dinosaurs-watchers-ig51.herokuapp.com), cuenta con 4 campos, estos tienen algunas condiciones para que el formulario funcione correctamente.
 - <strong>Nombre: </strong> Mínimo 4 caracteres, máximo 100.
@@ -33,6 +34,13 @@ La [API](https://nationalize.io), recibe un parametro "Nombre", y en base a ese 
 Solo edita el nombre "Greg", por el que desees ;)
 
 <p align="center"><img src="https://media1.tenor.com/images/41a1d343c07734a359fef980b02d3019/tenor.gif" width="500" height="400"></p>
+
+
+## Gracias
+
+Gracias por visitar la página y por el vídeo, puedes revisar otros proyectos en la misma página😉
+
+<p align="center"><img src="https://c.tenor.com/9K7t67N5JWIAAAAC/untan-yui-hirasawa.gif" width="500" height="400"></p>
 
 ## License
 
